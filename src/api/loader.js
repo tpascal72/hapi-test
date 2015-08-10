@@ -16,4 +16,5 @@ var staticRoute = {
 	}
 };
 
+console.log('loading routes...');
 server.route(staticRoute);
