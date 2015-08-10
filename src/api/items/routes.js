@@ -1,5 +1,6 @@
 var server = require('../../server');
 var read = require('./read');
+var create = require('./create');
 
 
 var readRoute = {
@@ -11,6 +12,17 @@ var readRoute = {
 			.then(reply)
 			.catch(function (error) {return reply (console.error(error) ); });
 	}
-}
+};
+
+var createRoute = {
+	path: "/items",
+	method: "PUT",
+	handler: function (request, reply){
+		create(request.payload)
+			.then(reply)
+			.catch(function (error){ return reply(console.error(error)); });
+	}
+};
 
 server.route(readRoute);
+server.route(createRoute);

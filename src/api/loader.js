@@ -2,6 +2,7 @@ var server = require('../server');
 var path = require('path');
 
 //Load items api
+console.log('loading routes...');
 require('./items/routes');
 
 var staticPath = path.join(path.resolve(__dirname, "../../", "front-end"));
@@ -16,5 +17,5 @@ var staticRoute = {
 	}
 };
 
-console.log('loading routes...');
+
 server.route(staticRoute);
