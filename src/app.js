@@ -15,7 +15,7 @@ dbInit()
 
 
 function startHandlers(){
-	console.log('starting web server...');
+	console.log('Starting web server...');
 	require('./server');
 	require('./api/loader');
 }

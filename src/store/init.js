@@ -8,7 +8,8 @@ function init(){
 			isFilePresent(cfg.config("liveDatabase")),
 			isFilePresent(cfg.config("baseDatabase"))
 		])
-			.then(createDatabase);
+		
+			.then(console.log("Database Initialized."), createDatabase);
 }
 
 function createDatabase(exists){
@@ -21,6 +22,7 @@ function createDatabase(exists){
 	fs.createReadStream(cfg.config("baseDatabase"))
 		.pipe(fs.createWriteStream(cfg.config("liveDatabase")));
 	return Promise.resolve(true);
+
 }
 
 function isFilePresent(filename){
