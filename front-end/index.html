@@ -1,2 +1,62 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-<h1 data-bind="foreach: items"></h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<h1>People</h1>
+<ul data-bind="foreach: people"></ul>
+
+		
+			<li data-bind="text: $data.name"" >
+				
+			</li>
+
+
+<script>
+	var Person = function(id, name){
+		this.id = ko.observable();
+		this.name = ko.observable();
+		
+	}
+	
+	function viewModel() {
+		var self = this;
+		
+		self.people = ko.observableArray([]);
+		
+		
+
+		
+		$.get("http://localhost:3000/items", function(data) {
+				//var mappedPeople = $.map(data, function(item){ console.log(item.id, item.name);return new Person(item.id, item.name)});
+					for (var i = 0; i< data.length; i++)
+					{
+						var person = new Person("name","id");
+						self.people.push(person);
+						console.log(person);
+						//console.log(data[i].name + " " + data[i].id);
+					}
+					
+			})
+				.done(function(){
+					console.log("done.");
+				})
+				.fail(function(){
+					console.log("fail");	
+				})
+				.always(function(){
+					console.log("finished.");
+				}); ;
+				
+				
+	
+		
+	}
+		
+	
+	
+	window.onload = function(){
+		ko.applyBindings(new viewModel());
+		};
+		
+</script>
+
+
+
