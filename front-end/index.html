@@ -28,7 +28,7 @@
 				//var mappedPeople = $.map(data, function(item){ console.log(item.id, item.name);return new Person(item.id, item.name)});
 					for (var i = 0; i< data.length; i++)
 					{
-						var person = new Person("name","id");
+						var person = new Person(data[i].id, data[i].name);
 						self.people.push(person);
 						console.log(person);
 						//console.log(data[i].name + " " + data[i].id);
