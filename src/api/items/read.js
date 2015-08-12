@@ -6,7 +6,7 @@ function get(criteria){
 	var request = db("items").select();
 	if (criteria)
 		request
-			.where(criteria)
+			.where("id", criteria)
 			.then(function (items) {return Promise.resolve(items[0] ); });
 	return request;
 }

@@ -11,9 +11,11 @@
 
 <script>
 	var Person = function(id, name){
-		this.id = ko.observable();
-		this.name = ko.observable();
-		
+		 
+		 this.name = ko.observable(name);
+		 this.id = ko.observable(id);
+		 
+		 
 	}
 	
 	function viewModel() {
@@ -22,17 +24,25 @@
 		self.people = ko.observableArray([]);
 		
 		
-
 		
-		$.get("http://localhost:3000/items", function(data) {
-				//var mappedPeople = $.map(data, function(item){ console.log(item.id, item.name);return new Person(item.id, item.name)});
-					for (var i = 0; i< data.length; i++)
+		
+		$.getJSON("/items", function(data) {
+				var mappedPeople = $.map(data, function(item){ 
+					
+						console.log(item.id, item.name);
+						var name = item.name;
+						var id = item.id;
+				
+						//self.people.push(Person.id(item.id).name(item.name));
+						console.log(peeps);
+						});
+					/*for (var i = 0; i< data.length; i++)
 					{
 						var person = new Person(data[i].id, data[i].name);
 						self.people.push(person);
-						console.log(person);
+						console.log(mappedPeople);
 						//console.log(data[i].name + " " + data[i].id);
-					}
+					}*/
 					
 			})
 				.done(function(){
