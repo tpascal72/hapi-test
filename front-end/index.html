@@ -1,72 +1,82 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <h1>People</h1>
-<ul data-bind="foreach: people"></ul>
+<ul data-bind="foreach: people">
 
 		
-			<li data-bind="text: $data.name"" >
+			<li data-bind="text: name" >
 				
 			</li>
-
-
+</ul>
+<div>
+	<input data-bind="value: newUserName" placeholder="New User's Name" />
+	<button data-bind="click: create">Create User</button>
+</div>
 <script>
+
 	var Person = function(id, name){
-		 
-		 this.name = ko.observable(name);
-		 this.id = ko.observable(id);
-		 
-		 
-	}
+	 
+	 this.name = ko.observable(name);
+	 this.id = ko.observable(id);
+	 
+	 
+}
+
+function itemsViewModel() {
+	var self = this;
 	
-	function viewModel() {
-		var self = this;
-		
-		self.people = ko.observableArray([]);
-		
-		
-		
-		
-		$.getJSON("/items", function(data) {
-				var mappedPeople = $.map(data, function(item){ 
-					
-						console.log(item.id, item.name);
-						var name = item.name;
-						var id = item.id;
-				
-						//self.people.push(Person.id(item.id).name(item.name));
-						console.log(peeps);
-						});
-					/*for (var i = 0; i< data.length; i++)
-					{
-						var person = new Person(data[i].id, data[i].name);
-						self.people.push(person);
-						console.log(mappedPeople);
-						//console.log(data[i].name + " " + data[i].id);
-					}*/
-					
+	self.people = ko.observableArray();
+	self.newUserName = ko.observable();
+
+	$.getJSON("/items", function() {
+				console.log("Successfully accessed GET - items");
 			})
-				.done(function(){
-					console.log("done.");
-				})
-				.fail(function(){
-					console.log("fail");	
-				})
-				.always(function(){
-					console.log("finished.");
-				}); ;
+			.done(function(data){
+				$.map(data, function(item){ 
 				
-				
+					var name = item.name;
+					var id = item.id;
+					
+					var person = new Person(id, name);
+					self.people.push(person);
+					})
+				console.log("Done.");
+			})
+			.fail(function(error){
+				console.log("Failed: " + error);	
+			})
+			.always(function(){
+				console.log("Finished.");
+			}); 
+			
+	/*self.addItem = function() {
+		self.people.push(new Person({name: this.newUserName()}));
+		self.newUserName("");
+	};*/
 	
+	self.create = function() {
+		var name = this.newUserName();
+		console.log(name);
+		var nameJSON = ko.toJSON(name);
+		console.log(nameJSON);
+		$.ajax({
+			url:"/create", 
+			data: ko.toJSON( name ),
+			type: 'PUT', 
+			contentType: "application/json",
+			success: function(data) {console.log(data)}
+		});
 		
-	}
-		
+	};		
+			
+
 	
+}
 	
+
 	window.onload = function(){
-		ko.applyBindings(new viewModel());
+		ko.applyBindings(new itemsViewModel());
 		};
 		
 </script>
-
-
-

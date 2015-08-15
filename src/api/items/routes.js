@@ -15,7 +15,7 @@ var readRoute = {
 };
 
 var createRoute = {
-	path: "/items",
+	path: "/create",
 	method: "PUT",
 	handler: function (request, reply){
 		create(request.payload)
