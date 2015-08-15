@@ -6,7 +6,7 @@ function put(item){
 	console.log(item.name);
 	console.log(item['"name']);
 	return db("items")
-		.insert({name: item})
+		.insert({name: item.name, password: item.pass})
 		.then(function (newIds) {return Promise.resolve(newIds[0]); });
 }
 

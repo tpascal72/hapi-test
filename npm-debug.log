@@ -1,0 +1,539 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'bcrypt',
+1 verbose cli   '--save' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of C:\Users\Owner\Desktop\hapi\hapi-test\package.json
+5 warn package.json hapitest@1.0.0 No description
+6 warn package.json hapitest@1.0.0 No repository field.
+7 warn package.json hapitest@1.0.0 No README data
+8 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\package.json
+9 silly cache add args [ 'bcrypt', null ]
+10 verbose cache add spec bcrypt
+11 silly cache add parsed spec { raw: 'bcrypt',
+11 silly cache add   scope: null,
+11 silly cache add   name: 'bcrypt',
+11 silly cache add   rawSpec: '',
+11 silly cache add   spec: '*',
+11 silly cache add   type: 'range' }
+12 silly addNamed bcrypt@*
+13 verbose addNamed "*" is a valid semver range for bcrypt
+14 silly addNameRange { name: 'bcrypt', range: '*', hasData: false }
+15 silly mapToRegistry name bcrypt
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
+19 verbose addNameRange registry:https://registry.npmjs.org/bcrypt not in flight; fetching
+20 verbose request uri https://registry.npmjs.org/bcrypt
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 7:43:07 PM
+23 verbose request id 1baf32cb8d26893a
+24 verbose etag "F5LKQ9M2S1IVB3ZKCW9RNP1VI"
+25 http request GET https://registry.npmjs.org/bcrypt
+26 http 304 https://registry.npmjs.org/bcrypt
+27 silly get cb [ 304,
+27 silly get   { date: 'Sat, 15 Aug 2015 00:43:06 GMT',
+27 silly get     via: '1.1 varnish',
+27 silly get     'cache-control': 'max-age=60',
+27 silly get     etag: '"F5LKQ9M2S1IVB3ZKCW9RNP1VI"',
+27 silly get     age: '0',
+27 silly get     connection: 'keep-alive',
+27 silly get     'x-served-by': 'cache-ord1729-ORD',
+27 silly get     'x-cache': 'HIT',
+27 silly get     'x-cache-hits': '1',
+27 silly get     'x-timer': 'S1439599386.558910,VS0,VE36',
+27 silly get     vary: 'Accept' } ]
+28 verbose etag https://registry.npmjs.org/bcrypt from cache
+29 verbose get saving bcrypt to C:\Users\Owner\AppData\Roaming\npm-cache\registry.npmjs.org\bcrypt\.cache.json
+30 silly addNameRange number 2 { name: 'bcrypt', range: '*', hasData: true }
+31 silly addNameRange versions [ 'bcrypt',
+31 silly addNameRange   [ '0.1.2',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.2.1',
+31 silly addNameRange     '0.1.3',
+31 silly addNameRange     '0.2.2',
+31 silly addNameRange     '0.2.3',
+31 silly addNameRange     '0.2.4',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.3.1',
+31 silly addNameRange     '0.3.2',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.4.1',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.7.1',
+31 silly addNameRange     '0.7.2',
+31 silly addNameRange     '0.7.3',
+31 silly addNameRange     '0.7.4',
+31 silly addNameRange     '0.7.5',
+31 silly addNameRange     '0.7.6',
+31 silly addNameRange     '0.7.7',
+31 silly addNameRange     '0.7.8',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.8.1',
+31 silly addNameRange     '0.8.2',
+31 silly addNameRange     '0.8.3',
+31 silly addNameRange     '0.8.4',
+31 silly addNameRange     '0.8.5' ] ]
+32 silly addNamed bcrypt@0.8.5
+33 verbose addNamed "0.8.5" is a plain semver version for bcrypt
+34 silly cache afterAdd bcrypt@0.8.5
+35 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\bcrypt\0.8.5\package\package.json not in flight; writing
+36 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\bcrypt\0.8.5\package\package.json written
+37 silly install resolved [ { name: 'bcrypt',
+37 silly install resolved     description: 'A bcrypt library for NodeJS.',
+37 silly install resolved     keywords:
+37 silly install resolved      [ 'bcrypt',
+37 silly install resolved        'password',
+37 silly install resolved        'auth',
+37 silly install resolved        'authentication',
+37 silly install resolved        'encryption',
+37 silly install resolved        'crypt',
+37 silly install resolved        'crypto' ],
+37 silly install resolved     main: './bcrypt',
+37 silly install resolved     version: '0.8.5',
+37 silly install resolved     author: { name: 'Nick Campbell', url: 'https://github.com/ncb000gt' },
+37 silly install resolved     engines: { node: '>= 0.6.0' },
+37 silly install resolved     repository:
+37 silly install resolved      { type: 'git',
+37 silly install resolved        url: 'git+https://github.com/ncb000gt/node.bcrypt.js.git' },
+37 silly install resolved     license: 'MIT',
+37 silly install resolved     bugs: { url: 'https://github.com/ncb000gt/node.bcrypt.js/issues' },
+37 silly install resolved     scripts:
+37 silly install resolved      { test: 'node-gyp configure build && nodeunit test',
+37 silly install resolved        install: 'node-gyp rebuild' },
+37 silly install resolved     dependencies: { bindings: '1.2.1', nan: '2.0.5' },
+37 silly install resolved     devDependencies: { nodeunit: '~0.9.1' },
+37 silly install resolved     contributors:
+37 silly install resolved      [ [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object],
+37 silly install resolved        [Object] ],
+37 silly install resolved     gypfile: true,
+37 silly install resolved     gitHead: '5d97708f06754d7d7989c67ba867002d10013615',
+37 silly install resolved     homepage: 'https://github.com/ncb000gt/node.bcrypt.js#readme',
+37 silly install resolved     _id: 'bcrypt@0.8.5',
+37 silly install resolved     _shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+37 silly install resolved     _from: 'bcrypt@*',
+37 silly install resolved     _npmVersion: '2.13.3',
+37 silly install resolved     _nodeVersion: '3.0.0',
+37 silly install resolved     _npmUser: { name: 'defunctzombie', email: 'shtylman@gmail.com' },
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: '8e5b81b4db80e944f440005979ca8d58a961861d',
+37 silly install resolved        tarball: 'http://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz' },
+37 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/bcrypt/-/bcrypt-0.8.5.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install bcrypt@0.8.5 into C:\Users\Owner\Desktop\hapi\hapi-test
+39 info installOne bcrypt@0.8.5
+40 verbose installOne of bcrypt to C:\Users\Owner\Desktop\hapi\hapi-test not in flight; installing
+41 verbose lock using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\bcrypt-801569eebc1ce570.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+42 silly install write writing bcrypt 0.8.5 to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+43 verbose unbuild node_modules\bcrypt
+44 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt is being purged from base C:\Users\Owner\Desktop\hapi\hapi-test
+45 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+46 verbose tar unpack C:\Users\Owner\AppData\Roaming\npm-cache\bcrypt\0.8.5\package.tgz
+47 verbose tar unpacking to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+48 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt is being purged
+49 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+50 silly gunzTarPerm modes [ '777', '666' ]
+51 silly gunzTarPerm extractEntry package.json
+52 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+53 silly gunzTarPerm extractEntry .npmignore
+54 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+55 silly gunzTarPerm extractEntry README.md
+56 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+57 silly gunzTarPerm extractEntry LICENSE
+58 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+59 silly gunzTarPerm extractEntry bcrypt.js
+60 silly gunzTarPerm modified mode [ 'bcrypt.js', 420, 438 ]
+61 silly gunzTarPerm extractEntry binding.gyp
+62 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+63 silly gunzTarPerm extractEntry .travis.yml
+64 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+65 silly gunzTarPerm extractEntry CHANGELOG.md
+66 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+67 silly gunzTarPerm extractEntry examples/async_compare.js
+68 silly gunzTarPerm modified mode [ 'examples/async_compare.js', 420, 438 ]
+69 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
+70 silly gunzTarPerm modified mode [ 'examples/forever_gen_salt.js', 420, 438 ]
+71 silly gunzTarPerm extractEntry test/async.js
+72 silly gunzTarPerm modified mode [ 'test/async.js', 420, 438 ]
+73 silly gunzTarPerm extractEntry test/repetitions.js
+74 silly gunzTarPerm modified mode [ 'test/repetitions.js', 420, 438 ]
+75 silly gunzTarPerm extractEntry test/sync.js
+76 silly gunzTarPerm modified mode [ 'test/sync.js', 420, 438 ]
+77 silly gunzTarPerm extractEntry Makefile
+78 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+79 silly gunzTarPerm extractEntry src/bcrypt.cc
+80 silly gunzTarPerm modified mode [ 'src/bcrypt.cc', 420, 438 ]
+81 silly gunzTarPerm extractEntry src/bcrypt_node.cc
+82 silly gunzTarPerm modified mode [ 'src/bcrypt_node.cc', 420, 438 ]
+83 silly gunzTarPerm extractEntry src/blowfish.cc
+84 silly gunzTarPerm modified mode [ 'src/blowfish.cc', 420, 438 ]
+85 silly gunzTarPerm extractEntry src/node_blf.h
+86 silly gunzTarPerm modified mode [ 'src/node_blf.h', 420, 438 ]
+87 silly gunzTarPerm extractEntry werker.yml
+88 silly gunzTarPerm modified mode [ 'werker.yml', 420, 438 ]
+89 verbose write writing to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\package.json
+90 info preinstall bcrypt@0.8.5
+91 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\package.json
+92 silly prepareForInstallMany adding bindings@1.2.1 from bcrypt dependencies
+93 silly prepareForInstallMany adding nan@2.0.5 from bcrypt dependencies
+94 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\package.json
+95 silly cache add args [ 'bindings@1.2.1', null ]
+96 verbose cache add spec bindings@1.2.1
+97 silly cache add args [ 'nan@2.0.5', null ]
+98 verbose cache add spec nan@2.0.5
+99 silly cache add parsed spec { raw: 'bindings@1.2.1',
+99 silly cache add   scope: null,
+99 silly cache add   name: 'bindings',
+99 silly cache add   rawSpec: '1.2.1',
+99 silly cache add   spec: '1.2.1',
+99 silly cache add   type: 'version' }
+100 silly addNamed bindings@1.2.1
+101 verbose addNamed "1.2.1" is a plain semver version for bindings
+102 silly mapToRegistry name bindings
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry uri https://registry.npmjs.org/bindings
+106 verbose addNameVersion registry:https://registry.npmjs.org/bindings not in flight; fetching
+107 silly cache add parsed spec { raw: 'nan@2.0.5',
+107 silly cache add   scope: null,
+107 silly cache add   name: 'nan',
+107 silly cache add   rawSpec: '2.0.5',
+107 silly cache add   spec: '2.0.5',
+107 silly cache add   type: 'version' }
+108 silly addNamed nan@2.0.5
+109 verbose addNamed "2.0.5" is a plain semver version for nan
+110 silly mapToRegistry name nan
+111 silly mapToRegistry using default registry
+112 silly mapToRegistry registry https://registry.npmjs.org/
+113 silly mapToRegistry uri https://registry.npmjs.org/nan
+114 verbose addNameVersion registry:https://registry.npmjs.org/nan not in flight; fetching
+115 verbose request uri https://registry.npmjs.org/bindings
+116 verbose request no auth needed
+117 info attempt registry request try #1 at 7:43:08 PM
+118 verbose etag "BCS5XYG9ISNJFNKEL5FLOI5HX"
+119 http request GET https://registry.npmjs.org/bindings
+120 verbose request uri https://registry.npmjs.org/nan
+121 verbose request no auth needed
+122 info attempt registry request try #1 at 7:43:08 PM
+123 verbose etag "41PIK59ZUA3ADEJCQ281I0TDQ"
+124 http request GET https://registry.npmjs.org/nan
+125 http 304 https://registry.npmjs.org/bindings
+126 silly get cb [ 304,
+126 silly get   { date: 'Sat, 15 Aug 2015 00:43:07 GMT',
+126 silly get     via: '1.1 varnish',
+126 silly get     'cache-control': 'max-age=60',
+126 silly get     etag: '"BCS5XYG9ISNJFNKEL5FLOI5HX"',
+126 silly get     age: '26',
+126 silly get     connection: 'keep-alive',
+126 silly get     'x-served-by': 'cache-ord1720-ORD',
+126 silly get     'x-cache': 'HIT',
+126 silly get     'x-cache-hits': '1',
+126 silly get     'x-timer': 'S1439599387.058767,VS0,VE0',
+126 silly get     vary: 'Accept' } ]
+127 verbose etag https://registry.npmjs.org/bindings from cache
+128 verbose get saving bindings to C:\Users\Owner\AppData\Roaming\npm-cache\registry.npmjs.org\bindings\.cache.json
+129 silly cache afterAdd bindings@1.2.1
+130 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\bindings\1.2.1\package\package.json not in flight; writing
+131 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\bindings\1.2.1\package\package.json written
+132 http 304 https://registry.npmjs.org/nan
+133 silly get cb [ 304,
+133 silly get   { date: 'Sat, 15 Aug 2015 00:43:07 GMT',
+133 silly get     via: '1.1 varnish',
+133 silly get     'cache-control': 'max-age=60',
+133 silly get     etag: '"41PIK59ZUA3ADEJCQ281I0TDQ"',
+133 silly get     age: '26',
+133 silly get     connection: 'keep-alive',
+133 silly get     'x-served-by': 'cache-ord1722-ORD',
+133 silly get     'x-cache': 'HIT',
+133 silly get     'x-cache-hits': '2',
+133 silly get     'x-timer': 'S1439599387.081202,VS0,VE0',
+133 silly get     vary: 'Accept' } ]
+134 verbose etag https://registry.npmjs.org/nan from cache
+135 verbose get saving nan to C:\Users\Owner\AppData\Roaming\npm-cache\registry.npmjs.org\nan\.cache.json
+136 silly cache afterAdd nan@2.0.5
+137 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\nan\2.0.5\package\package.json not in flight; writing
+138 verbose afterAdd C:\Users\Owner\AppData\Roaming\npm-cache\nan\2.0.5\package\package.json written
+139 silly install resolved [ { name: 'bindings',
+139 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+139 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+139 silly install resolved     version: '1.2.1',
+139 silly install resolved     author:
+139 silly install resolved      { name: 'Nathan Rajlich',
+139 silly install resolved        email: 'nathan@tootallnate.net',
+139 silly install resolved        url: 'http://tootallnate.net' },
+139 silly install resolved     repository:
+139 silly install resolved      { type: 'git',
+139 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+139 silly install resolved     main: './bindings.js',
+139 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+139 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+139 silly install resolved     license: 'MIT',
+139 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+139 silly install resolved     _id: 'bindings@1.2.1',
+139 silly install resolved     scripts: {},
+139 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+139 silly install resolved     _from: 'bindings@1.2.1',
+139 silly install resolved     _npmVersion: '1.4.14',
+139 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+139 silly install resolved     maintainers: [ [Object], [Object] ],
+139 silly install resolved     dist:
+139 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+139 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+139 silly install resolved     directories: {},
+139 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+139 silly install resolved     readme: 'ERROR: No README data found!' },
+139 silly install resolved   { name: 'nan',
+139 silly install resolved     version: '2.0.5',
+139 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+139 silly install resolved     main: 'include_dirs.js',
+139 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+139 silly install resolved     scripts:
+139 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+139 silly install resolved        'rebuild-tests': 'pangyp rebuild --msvs_version=2013 --directory test',
+139 silly install resolved        docs: 'doc/.build.sh' },
+139 silly install resolved     contributors:
+139 silly install resolved      [ [Object],
+139 silly install resolved        [Object],
+139 silly install resolved        [Object],
+139 silly install resolved        [Object],
+139 silly install resolved        [Object],
+139 silly install resolved        [Object],
+139 silly install resolved        [Object] ],
+139 silly install resolved     devDependencies:
+139 silly install resolved      { bindings: '~1.2.1',
+139 silly install resolved        'node-gyp': '~2.0.2',
+139 silly install resolved        pangyp: '~2.2.0',
+139 silly install resolved        tap: '~0.7.1',
+139 silly install resolved        xtend: '~4.0.0' },
+139 silly install resolved     license: 'MIT',
+139 silly install resolved     gitHead: 'd13a2e9ce762fd130877b53c71d35963fa2cf689',
+139 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+139 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+139 silly install resolved     _id: 'nan@2.0.5',
+139 silly install resolved     _shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+139 silly install resolved     _from: 'nan@2.0.5',
+139 silly install resolved     _npmVersion: '2.13.3',
+139 silly install resolved     _nodeVersion: '3.0.0',
+139 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+139 silly install resolved     maintainers: [ [Object], [Object] ],
+139 silly install resolved     dist:
+139 silly install resolved      { shasum: '365888014be1fd178db0cbfa258edf7b0cb1c408',
+139 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-2.0.5.tgz' },
+139 silly install resolved     directories: {},
+139 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.0.5.tgz',
+139 silly install resolved     readme: 'ERROR: No README data found!' } ]
+140 info install bindings@1.2.1 into C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+141 info install nan@2.0.5 into C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+142 info installOne bindings@1.2.1
+143 verbose installOne of bindings to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt not in flight; installing
+144 info installOne nan@2.0.5
+145 verbose installOne of nan to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt not in flight; installing
+146 verbose lock using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\bindings-b733490ae0ca9f2d.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+147 verbose lock using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\nan-d9dab7016553590c.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+148 silly install write writing bindings 1.2.1 to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+149 silly install write writing nan 2.0.5 to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+150 verbose unbuild node_modules\bcrypt\node_modules\bindings
+151 verbose unbuild node_modules\bcrypt\node_modules\nan
+152 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings is being purged from base C:\Users\Owner\Desktop\hapi\hapi-test
+153 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+154 verbose tar unpack C:\Users\Owner\AppData\Roaming\npm-cache\bindings\1.2.1\package.tgz
+155 verbose tar unpacking to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+156 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings is being purged
+157 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+158 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan is being purged from base C:\Users\Owner\Desktop\hapi\hapi-test
+159 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+160 silly gunzTarPerm modes [ '777', '666' ]
+161 verbose tar unpack C:\Users\Owner\AppData\Roaming\npm-cache\nan\2.0.5\package.tgz
+162 verbose tar unpacking to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+163 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan is being purged
+164 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+165 silly gunzTarPerm modes [ '777', '666' ]
+166 silly gunzTarPerm extractEntry package.json
+167 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+168 silly gunzTarPerm extractEntry package.json
+169 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+170 silly gunzTarPerm extractEntry README.md
+171 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+172 silly gunzTarPerm extractEntry bindings.js
+173 silly gunzTarPerm modified mode [ 'bindings.js', 420, 438 ]
+174 silly gunzTarPerm extractEntry README.md
+175 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+176 silly gunzTarPerm extractEntry include_dirs.js
+177 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 438 ]
+178 silly gunzTarPerm extractEntry nan_converters.h
+179 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 438 ]
+180 silly gunzTarPerm extractEntry LICENSE.md
+181 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+182 silly gunzTarPerm extractEntry .dntrc
+183 silly gunzTarPerm modified mode [ '.dntrc', 436, 438 ]
+184 silly gunzTarPerm extractEntry appveyor.yml
+185 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 438 ]
+186 verbose write writing to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings\package.json
+187 info preinstall bindings@1.2.1
+188 silly gunzTarPerm extractEntry doc/new.md
+189 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 438 ]
+190 silly gunzTarPerm extractEntry doc/.build.sh
+191 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 511 ]
+192 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings\package.json
+193 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings\package.json
+194 silly gunzTarPerm extractEntry doc/buffers.md
+195 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 438 ]
+196 silly gunzTarPerm extractEntry doc/callback.md
+197 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 438 ]
+198 silly install resolved []
+199 verbose about to build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+200 info build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+201 info linkStuff bindings@1.2.1
+202 silly linkStuff bindings@1.2.1 has C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules as its parent node_modules
+203 silly gunzTarPerm extractEntry doc/converters.md
+204 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 438 ]
+205 silly gunzTarPerm extractEntry doc/errors.md
+206 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 438 ]
+207 verbose linkBins bindings@1.2.1
+208 verbose linkMans bindings@1.2.1
+209 verbose rebuildBundles bindings@1.2.1
+210 info install bindings@1.2.1
+211 info postinstall bindings@1.2.1
+212 silly gunzTarPerm extractEntry doc/maybe_types.md
+213 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 438 ]
+214 silly gunzTarPerm extractEntry doc/methods.md
+215 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 438 ]
+216 verbose unlock done using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\bindings-b733490ae0ca9f2d.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\bindings
+217 silly gunzTarPerm extractEntry doc/asyncworker.md
+218 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 438 ]
+219 silly gunzTarPerm extractEntry doc/node_misc.md
+220 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 438 ]
+221 silly gunzTarPerm extractEntry doc/persistent.md
+222 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 438 ]
+223 silly gunzTarPerm extractEntry doc/scopes.md
+224 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 438 ]
+225 silly gunzTarPerm extractEntry doc/script.md
+226 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 438 ]
+227 silly gunzTarPerm extractEntry doc/string_bytes.md
+228 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 438 ]
+229 silly gunzTarPerm extractEntry doc/v8_internals.md
+230 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 438 ]
+231 silly gunzTarPerm extractEntry doc/v8_misc.md
+232 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 438 ]
+233 silly gunzTarPerm extractEntry nan.h
+234 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+235 silly gunzTarPerm extractEntry nan_callbacks.h
+236 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 438 ]
+237 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+238 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 438 ]
+239 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+240 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 438 ]
+241 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+242 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 438 ]
+243 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+244 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 438 ]
+245 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+246 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+247 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+248 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+249 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+250 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 438 ]
+251 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+252 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 438 ]
+253 silly gunzTarPerm extractEntry nan_new.h
+254 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+255 silly gunzTarPerm extractEntry nan_object_wrap.h
+256 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 438 ]
+257 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+258 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 438 ]
+259 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+260 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 438 ]
+261 silly gunzTarPerm extractEntry nan_string_bytes.h
+262 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 438 ]
+263 silly gunzTarPerm extractEntry nan_weak.h
+264 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 438 ]
+265 silly gunzTarPerm extractEntry CHANGELOG.md
+266 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+267 silly gunzTarPerm extractEntry tools/package.json
+268 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 438 ]
+269 silly gunzTarPerm extractEntry tools/README.md
+270 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 438 ]
+271 silly gunzTarPerm extractEntry tools/1to2.js
+272 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 511 ]
+273 verbose write writing to C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan\package.json
+274 info preinstall nan@2.0.5
+275 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan\package.json
+276 verbose readDependencies loading dependencies from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan\package.json
+277 silly install resolved []
+278 verbose about to build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+279 info build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+280 info linkStuff nan@2.0.5
+281 silly linkStuff nan@2.0.5 has C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules as its parent node_modules
+282 verbose linkBins nan@2.0.5
+283 verbose linkMans nan@2.0.5
+284 verbose rebuildBundles nan@2.0.5
+285 info install nan@2.0.5
+286 info postinstall nan@2.0.5
+287 verbose unlock done using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\nan-d9dab7016553590c.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt\node_modules\nan
+288 verbose about to build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+289 info build C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+290 info linkStuff bcrypt@0.8.5
+291 silly linkStuff bcrypt@0.8.5 has C:\Users\Owner\Desktop\hapi\hapi-test\node_modules as its parent node_modules
+292 verbose linkBins bcrypt@0.8.5
+293 verbose linkMans bcrypt@0.8.5
+294 verbose rebuildBundles bcrypt@0.8.5
+295 verbose rebuildBundles [ 'bindings', 'nan' ]
+296 info install bcrypt@0.8.5
+297 verbose unsafe-perm in lifecycle true
+298 info bcrypt@0.8.5 Failed to exec install script
+299 verbose unlock done using C:\Users\Owner\AppData\Roaming\npm-cache\_locks\bcrypt-801569eebc1ce570.lock for C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+300 verbose stack Error: bcrypt@0.8.5 install: `node-gyp rebuild`
+300 verbose stack Exit status 1
+300 verbose stack     at EventEmitter.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+300 verbose stack     at EventEmitter.emit (events.js:110:17)
+300 verbose stack     at ChildProcess.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+300 verbose stack     at ChildProcess.emit (events.js:110:17)
+300 verbose stack     at maybeClose (child_process.js:1015:16)
+300 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+301 verbose pkgid bcrypt@0.8.5
+302 verbose cwd C:\Users\Owner\Desktop\hapi\hapi-test
+303 error Windows_NT 6.3.9600
+304 error argv "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "bcrypt" "--save"
+305 error node v0.12.7
+306 error npm  v2.11.3
+307 error code ELIFECYCLE
+308 error bcrypt@0.8.5 install: `node-gyp rebuild`
+308 error Exit status 1
+309 error Failed at the bcrypt@0.8.5 install script 'node-gyp rebuild'.
+309 error This is most likely a problem with the bcrypt package,
+309 error not with npm itself.
+309 error Tell the author that this fails on your system:
+309 error     node-gyp rebuild
+309 error You can get their info via:
+309 error     npm owner ls bcrypt
+309 error There is likely additional logging output above.
+310 verbose exit [ 1, true ]
+311 verbose unbuild node_modules\bcrypt
+312 info preuninstall bcrypt@0.8.5
+313 info uninstall bcrypt@0.8.5
+314 verbose unbuild rmStuff bcrypt@0.8.5 from C:\Users\Owner\Desktop\hapi\hapi-test\node_modules
+315 info postuninstall bcrypt@0.8.5
+316 silly gentlyRm C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt is being purged from base C:\Users\Owner\Desktop\hapi\hapi-test
+317 verbose gentlyRm don't care about contents; nuking C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+318 silly vacuum-fs purging C:\Users\Owner\Desktop\hapi\hapi-test\node_modules\bcrypt
+319 silly vacuum-fs removing C:\Users\Owner\Desktop\hapi\hapi-test\node_modules
+320 silly vacuum-fs finished vacuuming up to C:\Users\Owner\Desktop\hapi\hapi-test

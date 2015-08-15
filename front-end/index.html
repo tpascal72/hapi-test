@@ -11,6 +11,7 @@
 </ul>
 <div>
 	<input data-bind="value: newUserName" placeholder="New User's Name" />
+	<input data-bind="value: newUserPass" placeholder="Password" />
 	<button data-bind="click: create">Create User</button>
 </div>
 <script>
@@ -28,6 +29,7 @@ function itemsViewModel() {
 	
 	self.people = ko.observableArray();
 	self.newUserName = ko.observable();
+	self.newUserPass = ko.observable();
 
 	$.getJSON("/items", function() {
 				console.log("Successfully accessed GET - items");
@@ -56,13 +58,17 @@ function itemsViewModel() {
 	};*/
 	
 	self.create = function() {
-		var name = this.newUserName();
-		console.log(name);
-		var nameJSON = ko.toJSON(name);
-		console.log(nameJSON);
+		var user = 
+		{
+			name: this.newUserName(),
+			pass: this.newUserPass()
+		};
+		console.log(user);
+		var userJSON = ko.toJSON(user);
+		console.log(userJSON);
 		$.ajax({
 			url:"/create", 
-			data: ko.toJSON( name ),
+			data: userJSON,
 			type: 'PUT', 
 			contentType: "application/json",
 			success: function(data) {console.log(data)}
