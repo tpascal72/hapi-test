@@ -8,11 +8,21 @@
 			<li data-bind="text: name" >
 				
 			</li>
+			
+			<li>
+				<span data-bind="text: id"  ></span>
+				<button data-bind="click: $parent.update">Delete </button>
+			</li>	
 </ul>
 <div>
 	<input data-bind="value: newUserName" placeholder="New User's Name" />
 	<input data-bind="value: newUserPass" placeholder="Password" />
 	<button data-bind="click: create">Create User</button>
+</div>
+<div>
+	<input data-bind="value: userName" placeholder="Enter User's Name" />
+	<input data-bind="value: userPass" placeholder="Your Password" />
+	<button data-bind="click: login">Login User</button>
 </div>
 <script>
 
@@ -30,6 +40,9 @@ function itemsViewModel() {
 	self.people = ko.observableArray();
 	self.newUserName = ko.observable();
 	self.newUserPass = ko.observable();
+
+	self.userName = ko.observable();
+	self.userPass = ko.observable();
 
 	$.getJSON("/items", function() {
 				console.log("Successfully accessed GET - items");
@@ -74,7 +87,39 @@ function itemsViewModel() {
 			success: function(data) {console.log(data)}
 		});
 		
-	};		
+	};
+
+	self.update = function(id){
+		var id = this.id();
+		console.log("update fired.");
+		$.ajax({
+			url: "/items",
+			data: ko.toJSON(id),
+			type: "post",
+			contentType: "application/json",
+			success: function() { console.log("Successfully deleted: "+ this.name())}
+		});
+		
+	};
+
+	self.login = function()
+	{
+		var user = 
+		{
+			name: this.userName(),
+			pass: this.userPass()
+		};
+		console.log(user);
+		var userLoginJSON = ko.toJSON(user);
+		console.log(userLoginJSON);
+		$.ajax({
+			url:"/login", 
+			data: userLoginJSON,
+			type: 'GET', 
+			contentType: "application/json",
+			success: function(data) {console.log("Comparison matched!")}
+		});
+	}	
 			
 
 	
