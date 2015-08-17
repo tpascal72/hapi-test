@@ -67,7 +67,7 @@ server.route({
       .then(function(user){
         if (user) {
           //request.auth.session.set(user);
-          return reply("Login Successful!");
+          return reply('Hello').state('data', { firstVisit: false });;
         } else {
           return reply("Bad email or password");
         }
