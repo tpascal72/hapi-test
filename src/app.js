@@ -20,10 +20,6 @@ function startHandlers(){
 	require('./api/loader');
 }
 
-var Bcrypt = require('bcryptjs');
-var Hapi = require('hapi');
-var Basic = require('hapi-auth-basic');
-
 function stopServer(error){
 	console.error("Failed to create database: " + error);
 }
