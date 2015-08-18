@@ -21,6 +21,7 @@ function put(user){;
 				 password: bcrypt.hashSync(user.pass, salt),
 				 email: user.email,
 				 activated: false,
+				 
 				 activationCode: makeCode()})
 		.then(function (newIds) {return Promise.resolve(newIds[0]); });
 }
