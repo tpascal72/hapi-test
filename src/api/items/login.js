@@ -4,8 +4,6 @@ var Bcrypt = require('bcryptjs');
 
 
 function login(data){
-	//select all items from items table
-	console.log(data);
 
 	var promise = new Promise(function (resolve, reject) {
 
@@ -33,23 +31,5 @@ function login(data){
 
     return promise;
 }
-/*
-	var request = db("items").select();
-	if (data)
-		request
-			.where("name", data.name)
-			.then(function (items) 
-					{
-						console.log(items);
-						return Bcrypt.compare(data.pass, items.password, function (err, isValid) 
-							{
-        						callback(err, isValid, { id: items.id, name: items.name });
-    						}
-    					);
-					}
-				);
-	return request;
-}
-*/
 
 module.exports  = login;

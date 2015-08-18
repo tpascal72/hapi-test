@@ -1,9 +1,9 @@
 var db = require('../../store/db');
 var Promise = require('bluebird');
 
-function get(criteria){
+function getUsers(criteria){
 	//select all items from items table
-	var request = db("Users").select();
+	var request = db("Users").select('userName');
 	console.log(criteria);
 	if (criteria)
 		request
@@ -12,4 +12,4 @@ function get(criteria){
 	return request;
 }
 
-module.exports  = get;
+module.exports  = getUsers;

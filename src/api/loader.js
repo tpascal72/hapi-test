@@ -19,5 +19,20 @@ var staticRoute = {
 	}
 };
 
+var activatePath = path.join(path.resolve(__dirname, "../../front-end", "activate"));
+
+var activatecRoute = {
+	method: "GET",
+	path: "/{param*}",
+	handler: {
+		directory: {
+			path: activatePath,
+			listing: true,
+			index: true
+		}
+	}
+};
+
 console.log("Loading public route...");
 server.route(staticRoute);
+server.route(activateRoute);

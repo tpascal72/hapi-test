@@ -36,27 +36,6 @@ var updateRoute = {
 	}
 };
 
-/*
-var loginRoute = {
-	path: "/login",
-	method: "GET",
-	handler: function (request, reply){
-		login(request.payload)
-			.then(reply)
-			.catch(function (error) {return reply (console.error(error) ); });
-	}
-};
-*/
-
-/* Setting a cookie session, not working
-server.auth.strategy('base', 'cookie', true, {
-  password: 'supersecretpassword', // cookie secret
-  cookie: 'app-cookie', // Cookie name
-  ttl: 24 * 60 * 60 * 1000 // Set session to 1 day
-});
-*/
-
-
 server.route({
   method: "POST",
   path: "/login",
@@ -79,20 +58,15 @@ server.route({
   }
 });
 
-/*
-server.register(Basic, function (err) {
-    server.auth.strategy('simple', 'basic', { validateFunc: validate });
-    server.route({
-        method: 'POST',
-        path: '/login',
-        config: {
-            auth: 'simple',
-            handler: function (request, reply) {
-                reply('hello, ' + request.auth.credentials.name);
-            }
-        }
-    });
-*/
+var activateRoute = {
+	path: "/activate/{userName, activateCode}",
+	method: "POST",
+	handler: function (request, reply){
+		update(request.payload)
+			.then(reply)
+			.catch(function (error){ return reply(console.error(error)); });
+	}
+};
 
 server.route(readRoute);
 server.route(createRoute);

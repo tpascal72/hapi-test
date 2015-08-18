@@ -21,9 +21,10 @@ function itemsViewModel() {
 				console.log("Successfully accessed GET - users");
 			})
 			.done(function(data){
-				$.map(data, function(item){ 
+				$.map(data, function(item){
+
 				
-					var name = item.name;
+					var name = item.userName;
 					var id = item.id;
 					
 					var person = new Person(id, name);

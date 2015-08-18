@@ -1,0 +1,38 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./vm/itemsViewModel.js"></script>
+
+<h1>People</h1>
+<ul data-bind="foreach: people">
+
+		
+			<li data-bind="text: name" >
+				
+			</li>
+			
+			<li>
+				<span data-bind="text: id"  ></span>
+				<button data-bind="click: $parent.update">Delete </button>
+			</li>	
+</ul>
+<div>
+	<input data-bind="value: newUserName" placeholder="New User's Name" />
+	<input data-bind="value: newUserEmail" placeholder="E-Mail" />
+	<input data-bind="value: newUserPass" placeholder="Password" />
+	<button data-bind="click: create">Create User</button>
+</div>
+<div>
+	<input data-bind="value: userName" placeholder="Enter User's Name" />
+	<input data-bind="value: userPass" placeholder="Your Password" />
+	<button data-bind="click: login">Login User</button>
+</div>
+<script>
+
+	
+	
+
+	window.onload = function(){
+		ko.applyBindings(new itemsViewModel());
+		};
+		
+</script>
