@@ -24,7 +24,7 @@ function put(user){;
 function makeCode()
 {
 	var code = "";
-	var used
+	//var used;
 }
 
 module.exports = put;
