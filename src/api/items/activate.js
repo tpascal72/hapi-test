@@ -16,9 +16,19 @@ function activate(data){
 		.then(function (items)
 			{
 				console.log(items[0].activationCode);
-				console.log(items[0].password);
 				if (data[1] == items[0].activationCode) 
 				{
+					db("Users")
+					.where("userName", data[0])
+					.update(
+					{
+						activated: true
+					})
+					.then(function(log)
+					{
+						console.log("Set to active");
+					});
+					
             		resolve(Promise.resolve("You have successfully activated your account!"));
         		}
         		else
@@ -27,11 +37,7 @@ function activate(data){
                 	return reject("[COMPARE] ");
         		}
 			}
-		)
-		.then(function (i)
-		{
-			console.log("Entered second then");
-		});
+		);
     });
 
     return promise;
