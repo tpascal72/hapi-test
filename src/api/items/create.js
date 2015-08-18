@@ -17,14 +17,27 @@ function put(user){;
 
 
 	return db("Users")
-		.insert({userName: user.name, password: bcrypt.hashSync(user.pass, salt), email: user.email, activated: false})
+		.insert({userName: user.name,
+				 password: bcrypt.hashSync(user.pass, salt),
+				 email: user.email,
+				 activated: false,
+				 activationCode: makeCode()})
 		.then(function (newIds) {return Promise.resolve(newIds[0]); });
 }
 
 function makeCode()
 {
 	var code = "";
-	//var used;
+	var charactersToUse = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var randomNum = 0;
+
+	for(var i = 0; i < 20; i++)
+	{
+		randomNum = Math.floor(Math.random() * charactersToUse.length);
+		code += charactersToUse.substring(randomNum,randomNum + 1);
+	}
+
+	return code;
 }
 
 module.exports = put;
