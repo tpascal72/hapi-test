@@ -54,12 +54,12 @@ db.schema.hasTable('Users').then(function(exists)
 		return db.schema.createTable('Users', function(t)
 		{
 			t.increments('userID').primary();
-			t.string('userName', 100).notNullable();
+			t.string('userName', 100).notNullable().unique();
 			t.string('password', 100).notNullable();
-			t.string('email', 255).notNullable();
+			t.string('email', 255).notNullable().unique();
 			t.string('location', 20);
-			t.boolean('confirmed');
-			t.string('confirmedCode', 25);
+			t.boolean('activated');
+			t.string('activationCode', 25);
 			t.integer('employeeProfileID').references('empID').inTable('EmployeeProfile');
 			t.integer('employerProfileID').references('bossID').inTable('EmployerProfile');
 		});
