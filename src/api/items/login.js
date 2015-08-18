@@ -9,9 +9,9 @@ function login(data){
 
 	var promise = new Promise(function (resolve, reject) {
 
-		db("items")
+		db("Users")
 		.select()
-		.where("name", data.name)
+		.where("userName", data.name)
 		.then(function (items)
 			{
 				console.log(data.pass);

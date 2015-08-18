@@ -6,7 +6,7 @@ var login = require('./login');
 
 
 var readRoute = {
-	path: "/items/{id?}",
+	path: "/users/{id?}",
 	method: "GET",
 	handler: function (request, reply){
 		var id = request.params.id || null;

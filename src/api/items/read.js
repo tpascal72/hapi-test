@@ -3,11 +3,11 @@ var Promise = require('bluebird');
 
 function get(criteria){
 	//select all items from items table
-	var request = db("items").select();
+	var request = db("Users").select();
 	console.log(criteria);
 	if (criteria)
 		request
-			.where("name", criteria)
+			.where("userName", criteria)
 			.then(function (items) {return console.log(items);Promise.resolve(items[0] ); });
 	return request;
 }

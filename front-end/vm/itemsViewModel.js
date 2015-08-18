@@ -11,9 +11,14 @@ function itemsViewModel() {
 	
 	self.people = ko.observableArray();
 	self.newUserName = ko.observable();
+	self.newUserPass = ko.observable();
+	self.newUserEmail = ko.observable();
 
-	$.getJSON("/items", function() {
-				console.log("Successfully accessed GET - items");
+	self.userName = ko.observable();
+	self.userPass = ko.observable();
+
+	$.getJSON("/users", function() {
+				console.log("Successfully accessed GET - users");
 			})
 			.done(function(data){
 				$.map(data, function(item){ 
@@ -33,27 +38,59 @@ function itemsViewModel() {
 				console.log("Finished.");
 			}); 
 			
-	/*self.addItem = function() {
-		self.people.push(new Person({name: this.newUserName()}));
-		self.newUserName("");
-	};*/
 	
 	self.create = function() {
-		var name = this.newUserName();
-		console.log(name);
-		var nameJSON = ko.toJSON(name);
-		console.log(nameJSON);
+		var user = 
+		{
+			name: this.newUserName(),
+			pass: this.newUserPass(),
+			email: this.newUserEmail()
+		};
+		console.log(user);
+		var userJSON = ko.toJSON(user);
+		console.log(userJSON);
 		$.ajax({
-			url:"/items", 
-			data: ko.toJSON( name ),
+			url:"/create", 
+			data: userJSON,
 			type: 'PUT', 
 			contentType: "application/json",
 			success: function(data) {console.log(data)}
 		});
 		
-	};		
+	};
+
+	self.update = function(id){
+		var id = this.id();
+		console.log("update fired.");
+		$.ajax({
+			url: "/items",
+			data: ko.toJSON(id),
+			type: "post",
+			contentType: "application/json",
+			success: function() { console.log("Successfully deleted: "+ this.name())}
+		});
+		
+	};
+
+	self.login = function()
+	{
+		var user = 
+		{
+			name: this.userName(),
+			pass: this.userPass()
+		};
+		console.log(user);
+		var userLoginJSON = ko.toJSON(user);
+		console.log(userLoginJSON);
+		$.ajax({
+			url:"/login", 
+			data: userLoginJSON,
+			type: "POST", 
+			contentType: "application/json",
+			success: function(data) {console.log("Comparison matched!")}
+		});
+	}	
 			
 
 	
 }
-	

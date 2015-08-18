@@ -1,5 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./vm/itemsViewModel.js"></script>
 
 <h1>People</h1>
 <ul data-bind="foreach: people">
@@ -16,6 +17,7 @@
 </ul>
 <div>
 	<input data-bind="value: newUserName" placeholder="New User's Name" />
+	<input data-bind="value: newUserEmail" placeholder="E-Mail" />
 	<input data-bind="value: newUserPass" placeholder="Password" />
 	<button data-bind="click: create">Create User</button>
 </div>
@@ -26,104 +28,7 @@
 </div>
 <script>
 
-	var Person = function(id, name){
-	 
-	 this.name = ko.observable(name);
-	 this.id = ko.observable(id);
-	 
-	 
-}
-
-function itemsViewModel() {
-	var self = this;
 	
-	self.people = ko.observableArray();
-	self.newUserName = ko.observable();
-	self.newUserPass = ko.observable();
-
-	self.userName = ko.observable();
-	self.userPass = ko.observable();
-
-	$.getJSON("/items", function() {
-				console.log("Successfully accessed GET - items");
-			})
-			.done(function(data){
-				$.map(data, function(item){ 
-				
-					var name = item.name;
-					var id = item.id;
-					
-					var person = new Person(id, name);
-					self.people.push(person);
-					})
-				console.log("Done.");
-			})
-			.fail(function(error){
-				console.log("Failed: " + error);	
-			})
-			.always(function(){
-				console.log("Finished.");
-			}); 
-			
-	/*self.addItem = function() {
-		self.people.push(new Person({name: this.newUserName()}));
-		self.newUserName("");
-	};*/
-	
-	self.create = function() {
-		var user = 
-		{
-			name: this.newUserName(),
-			pass: this.newUserPass()
-		};
-		console.log(user);
-		var userJSON = ko.toJSON(user);
-		console.log(userJSON);
-		$.ajax({
-			url:"/create", 
-			data: userJSON,
-			type: 'PUT', 
-			contentType: "application/json",
-			success: function(data) {console.log(data)}
-		});
-		
-	};
-
-	self.update = function(id){
-		var id = this.id();
-		console.log("update fired.");
-		$.ajax({
-			url: "/items",
-			data: ko.toJSON(id),
-			type: "post",
-			contentType: "application/json",
-			success: function() { console.log("Successfully deleted: "+ this.name())}
-		});
-		
-	};
-
-	self.login = function()
-	{
-		var user = 
-		{
-			name: this.userName(),
-			pass: this.userPass()
-		};
-		console.log(user);
-		var userLoginJSON = ko.toJSON(user);
-		console.log(userLoginJSON);
-		$.ajax({
-			url:"/login", 
-			data: userLoginJSON,
-			type: "POST", 
-			contentType: "application/json",
-			success: function(data) {console.log("Comparison matched!")}
-		});
-	}	
-			
-
-	
-}
 	
 
 	window.onload = function(){
