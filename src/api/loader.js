@@ -21,9 +21,9 @@ var staticRoute = {
 
 var activatePath = path.join(path.resolve(__dirname, "../../front-end", "activate"));
 
-var activatecRoute = {
+var activateRoute = {
 	method: "GET",
-	path: "/{param*}",
+	path: "/activate/{param*}",
 	handler: {
 		directory: {
 			path: activatePath,

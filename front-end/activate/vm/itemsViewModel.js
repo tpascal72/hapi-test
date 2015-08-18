@@ -37,7 +37,7 @@ function itemsViewModel() {
 		var userLoginJSON = ko.toJSON(user);
 		console.log(userLoginJSON);
 		$.ajax({
-			url:"/login", 
+			url:"/activate", 
 			data: userLoginJSON,
 			type: "POST", 
 			contentType: "application/json",

@@ -3,7 +3,7 @@ var read = require('./read');
 var create = require('./create');
 var update = require('./update');
 var login = require('./login');
-
+var activate = require('./activate');
 
 var readRoute = {
 	path: "/users/{id?}",
@@ -59,10 +59,11 @@ server.route({
 });
 
 var activateRoute = {
-	path: "/activate/{userName, activateCode}",
+	path: "/activate/{user*2}",
 	method: "POST",
 	handler: function (request, reply){
-		update(request.payload)
+		var activateParts = request.params.user.split('/');
+		activate(activateParts)
 			.then(reply)
 			.catch(function (error){ return reply(console.error(error)); });
 	}
@@ -72,3 +73,4 @@ server.route(readRoute);
 server.route(createRoute);
 server.route(updateRoute);
 //server.route(loginRoute);
+server.route(activateRoute);
