@@ -2,7 +2,7 @@ var cfg = require('ls-config');
 var path = require('path')
 var dbInit = require('./store/init');
 var basePath = path.resolve(__dirname, "..");
-var liveDb  = path.join (basePath, "test.db");
+var liveDb  = path.join(basePath, "test.db");
 var baseDb = path.join(basePath, "testBase.sqlite");
 cfg.config("webPort", 10001);
 cfg.config("socketsPort", 10002);

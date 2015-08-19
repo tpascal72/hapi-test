@@ -28,7 +28,7 @@ function activate(data){
 					{
 						console.log("Set to active");
 					});
-					
+
             		resolve(Promise.resolve("You have successfully activated your account!"));
         		}
         		else

@@ -45,7 +45,7 @@ server.route({
       login(request.payload)
       .then(function(user){
         if (user) {
-          //request.auth.session.set(user);
+          
           return reply('Hello').state('data', { firstVisit: false });;
         } else {
           return reply("Bad email or password");
@@ -59,13 +59,21 @@ server.route({
 });
 
 var activateRoute = {
-	path: "/activate/{user*2}",
-	method: "POST",
+	path: "/activate/{user*}",
+	method: "GET",
 	handler: function (request, reply){
-		var activateParts = request.params.user.split('/');
-		activate(activateParts)
-			.then(reply)
-			.catch(function (error){ return reply(console.error(error)); });
+		console.log(request.params);
+		if(request.params.length > 0)
+		{
+			var activateParts = request.params.user.split('/');
+			activate(activateParts)
+				.then(reply)
+				.catch(function (error){ return reply(console.error(error)); });
+		}
+		else
+		{
+			reply("No params");
+		}
 	}
 };
 

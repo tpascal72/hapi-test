@@ -5,7 +5,7 @@ server.connection({
 	port: 3000,
 	labels: "Web"
 	});
-
+/*used to create cookies
 server.state('data', {
     ttl: null,
     isSecure: true,
@@ -14,7 +14,7 @@ server.state('data', {
     clearInvalid: false, // remove invalid cookies
     strictHeader: true // don't allow violations of RFC 6265
 });
-
+*/
 
 
 
